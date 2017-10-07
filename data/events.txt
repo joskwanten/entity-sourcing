@@ -1,0 +1,4 @@
+{"entity":"autos","event":"create","payload":{"merk":"BMW","model":"320D Efficient Dynamics","vermogen":"149kW","id":"3d2ba7cb-a015-44a4-844e-6c11c54ea847"},"timestamp":"2017-10-07T09:55:01.994Z","id":"24878adf-2814-495d-a118-8c21d41473b4"}
+{"entity":"autos","event":"create","payload":{"merk":"Volvo","model":"XC70","vermogen":"139kW","id":"bc06f74c-dfff-46b1-8c82-00b3f4de71db"},"timestamp":"2017-10-07T10:02:43.707Z","id":"8e80a204-09a5-41ff-b73c-d4efbbc4153d"}
+{"entity":"personen","event":"create","payload":{"naam":"Karen","achternaam":"Pijpker","id":"51f5660a-946b-43f1-bae8-eca38a75b381"},"timestamp":"2017-10-07T10:03:17.826Z","id":"863d462f-2ce0-417c-bc32-0185025d0271"}
+{"entity":"autos","event":"create","payload":{"merk":"Volvo","model":"V50","vermogen":"139kW","id":"d4b7ad94-03df-4df3-9dcc-e588733b6001"},"timestamp":"2017-10-07T11:09:34.677Z","id":"3e92b091-d75d-4c02-8ec5-4cea3e4a928f"}

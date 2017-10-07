@@ -1,0 +1,19 @@
+{
+  "name": "accouting",
+  "version": "0.0.0",
+  "description": "accouting",
+  "main": "app.js",
+  "author": {
+    "name": "Jos"
+  },
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.15.2",
+    "uuid": "^3.1.0"
+  },
+  "devDependencies": {
+    "body-parser": "^1.17.1"
+  }
+}

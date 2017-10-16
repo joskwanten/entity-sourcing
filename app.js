@@ -6,6 +6,7 @@ const app = express();
 const fs = require('fs');
 const readline = require('readline');
 const uuidv4 = require('uuid/v4');
+var cors = require('cors');
 
 const journal = 'data/events.txt';
 const port = 3000;
@@ -20,11 +21,7 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 
 // Add CORS header
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-});
+app.use(cors());
 
 // Router for /api
 // get an instance of the express Router
@@ -150,7 +147,7 @@ router.delete('/v1/:entity/:id', function(req, res) {
         processCommand({
             entity: req.params.entity,
             event: 'delete',
-            id: req.params.id
+            payload: { id: req.params.id }
         });
 
         res.sendStatus(202);

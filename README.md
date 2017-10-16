@@ -1,7 +1,7 @@
 ﻿# Entity sourcing
 
 An experiment to make a universal REST backend based on event sourcing where events are stored in a simple text-file and played back as soon as the application restarts.
-You can create rest resouces on the fly by simpely posting an entity to the supposed resouce.
+You can create rest resouces on the fly by simply posting an entity to the supposed resource.
 
 E.g if you want to create a cars resource, then you can post the following message
 ```bash

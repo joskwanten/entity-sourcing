@@ -122,6 +122,25 @@ router.put('/v1/:entity/:id', function(req, res) {
     }
 });
 
+router.patch('/v1/:entity/:id', function(req, res) {
+    console.log(`Received Entity: '${req.params.entity}' JSON: '${req.body}'`);
+
+    if (aggregates[req.params.entity] != null &&
+        aggregates[req.params.entity].find(a => a.id === req.params.id) !== undefined) {
+
+        processCommand({
+            entity: req.params.entity,
+            event: 'patch',
+            payload: Object.assign(req.body, { id: req.params.id })
+        });
+
+        res.sendStatus(202);
+    } else {
+        // Not found, send 404
+        res.sendStatus(404);
+    }
+});
+
 router.delete('/v1/:entity/:id', function(req, res) {
     console.log(`Received Entity: '${req.params.entity}' Delete`);
 
@@ -184,6 +203,15 @@ function processEvent(event) {
                 if (itemIndex > -1) {
                     aggregates[event.entity][itemIndex] =
                         aggregates[event.entity][itemIndex] = event.payload;
+                }
+            }
+            break;
+        case 'patch':
+            if (aggregates[event.entity]) {
+                let itemIndex = aggregates[event.entity].findIndex(e => e.id === event.payload.id);
+                if (itemIndex > -1) {
+                    aggregates[event.entity][itemIndex] =
+                        Object.assign(aggregates[event.entity][itemIndex], event.payload);
                 }
             }
             break;

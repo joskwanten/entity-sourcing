@@ -8,9 +8,14 @@ E.g if you want to create a cars resource, then you can post the following messa
 > curl -H "Content-Type: application/json" -X POST -d '{"brand":"BMW","type":"320D"}' http://localhost:3000/api/v1/cars
 ```
 
-Once an entity is created, it can be (partially updated) with a Post command
+Once an entity is created, it can be updated with a PUT command
 ```bash
-> curl -H "Content-Type: application/json" -X POST -d '{"brand":"BMW","type":"320D", "power":"139kW"}' http://localhost:3000/api/v1/cars/bc06f74c-dfff-46b1-8c82-00b3f4de71db
+> curl -H "Content-Type: application/json" -X PUT -d '{"brand":"BMW","type":"320D", "power":"139kW"}' http://localhost:3000/api/v1/cars/bc06f74c-dfff-46b1-8c82-00b3f4de71db
+```
+
+It can also be partially updated with a PATCH command
+```bash
+> curl -H "Content-Type: application/json" -X PATCH -d '{"type":"320D ED"}' http://localhost:3000/api/v1/cars/bc06f74c-dfff-46b1-8c82-00b3f4de71db
 ```
 
 To delete an entity, it can be done by using the DELETE verb:
